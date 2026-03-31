@@ -1,0 +1,35 @@
+@startuml
+
+class OldWoman {
+    -state
+    +makeRequest()
+    +increaseAmbition()
+}
+
+class OldMan {
+    +forwardRequest()
+}
+
+class GoldFish {
+    -resourceLimit
+    +grantWish()
+    +resetSystem()
+}
+
+OldWoman --> OldMan : request
+OldMan --> GoldFish : forward
+GoldFish --> OldWoman : response
+
+note right of OldMan
+Proxy
+end note
+
+note right of GoldFish
+Server
+end note
+
+note left of OldWoman
+Client
+end note
+
+@enduml
