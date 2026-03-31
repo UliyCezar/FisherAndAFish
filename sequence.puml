@@ -1,0 +1,18 @@
+@startuml
+
+participant OldWoman
+participant OldMan
+participant GoldFish
+
+OldWoman -> OldMan : request()
+OldMan -> GoldFish : forwardRequest()
+
+alt лимит не превышен
+    GoldFish -> OldMan : wishGranted
+    OldMan -> OldWoman : result
+else превышен лимит
+    GoldFish -> OldMan : reset
+    OldMan -> OldWoman : reset
+end
+
+@enduml
