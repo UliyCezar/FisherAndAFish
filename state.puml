@@ -1,0 +1,11 @@
+@startuml
+
+[*] --> Poor
+
+Poor --> Noble : запрос статуса
+Noble --> Tsarina : запрос статуса
+Tsarina --> Overlord_Attempt : максимальный запрос
+
+Overlord_Attempt --> Poor : превышен лимит / сброс
+
+@enduml
