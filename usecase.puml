@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+
+actor OldWoman
+actor OldMan
+actor GoldFish
+
+rectangle System {
+    OldWoman --> (Попросить корыто)
+    OldWoman --> (Попросить статус)
+    OldWoman --> (Обнулить систему)
+
+    OldMan --> (Передать запрос)
+    (Передать запрос) --> GoldFish
+
+    (Попросить статус) --> (Передать запрос)
+    (Попросить корыто) --> (Передать запрос)
+
+    GoldFish --> (Исполнить желание)
+    GoldFish --> (Сбросить систему)
+
+    (Обнулить систему) --> (Сбросить систему)
+}
+@enduml
